@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.vaadin.artur</groupId>
+  <artifactId>vaadin-eclipse-mirror</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <output>${project.build.directory}/vaadin-update-site</output>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho.extras</groupId>
+        <artifactId>tycho-p2-extras-plugin</artifactId>
+        <version>0.26.0</version>
+
+        <executions>
+          <execution>
+            <id>mirror</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>mirror</goal>
+            </goals>
+            <configuration>
+              <source>
+                <repository>
+                  <id>vaadin</id>
+                  <layout>p2</layout>
+                  <url>http://vaadin.com/eclipse</url>
+                </repository>
+              </source>
+
+              <destination>${output}</destination>
+              <followStrictOnly>false</followStrictOnly>
+              <includeFeatures>true</includeFeatures>
+              <includeOptional>true</includeOptional>
+              <includeNonGreedy>true</includeNonGreedy>
+              <latestVersionOnly>true</latestVersionOnly>
+              <mirrorMetadataOnly>false</mirrorMetadataOnly>
+              <compress>true</compress>
+              <append>true</append>
+              <includePacked>true</includePacked>
+
+            </configuration>
+          </execution>
+
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+
+</project>
