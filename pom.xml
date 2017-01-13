@@ -33,8 +33,6 @@
                   <layout>p2</layout>
                   <url>http://vaadin.com/eclipse</url>
                 </repository>
-              </source>
-              <source>
                 <repository>
                   <id>ivyde</id>
                   <layout>p2</layout>
