@@ -34,6 +34,13 @@
                   <url>http://vaadin.com/eclipse</url>
                 </repository>
               </source>
+              <source>
+                <repository>
+                  <id>ivyde</id>
+                  <layout>p2</layout>
+                  <url>http://www.apache.org/dist/ant/ivyde/updatesite/</url>
+                </repository>
+              </source>
 
               <destination>${output}</destination>
               <followStrictOnly>false</followStrictOnly>
